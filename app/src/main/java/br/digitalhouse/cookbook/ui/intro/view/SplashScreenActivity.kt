@@ -6,9 +6,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import br.digitalhouse.cookbook.R
+import br.digitalhouse.cookbook.data.utils.ConfigFirebase
 import br.digitalhouse.cookbook.databinding.ActivitySplashscreenBinding
 import br.digitalhouse.cookbook.ui.dashboard.view.DashBoardActivity
-import br.digitalhouse.pokedex.data.utils.ConfigFirebase
 import com.google.firebase.auth.FirebaseAuth
 
 @SuppressLint("CustomSplashScreen")

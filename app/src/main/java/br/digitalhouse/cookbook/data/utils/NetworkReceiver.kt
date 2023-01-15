@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.net.wifi.WifiManager
+import br.digitalhouse.cookbook.ui.dashboard.view.NetworkReceiverActivity
 
 class NetworkReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context?, intent: Intent?) {
@@ -14,7 +15,7 @@ class NetworkReceiver : BroadcastReceiver() {
 
             }
             WifiManager.WIFI_STATE_DISABLED -> {
-                var intent = Intent(context, NetWorkReceiverActivity::class.java)
+                var intent = Intent(context, NetworkReceiverActivity::class.java)
                 context?.startActivity(intent)
             }
         }

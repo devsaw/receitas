@@ -13,12 +13,4 @@ interface ItemClickListener {
         //optional body
     }
 
-    fun onClickListenerUser(user: User){
-        //optional body
-    }
-
-    fun onClickListenerUAddress(uAddress: User){
-        //optional body
-    }
-
 }

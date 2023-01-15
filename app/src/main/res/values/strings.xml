@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Cookbook</string>
+    <string name="app_name">GastroCooks</string>
+    <string name="pdf_page_counter">%d / %d</string>
+    <string name="default_notification_channel_id">fcm_default_channel</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
