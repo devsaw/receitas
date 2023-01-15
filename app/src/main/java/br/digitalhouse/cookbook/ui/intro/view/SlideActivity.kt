@@ -1,11 +1,12 @@
-package br.digitalhouse.cookbook
+package br.digitalhouse.cookbook.ui.intro.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import br.digitalhouse.cookbook.R
 
-class MainActivity : AppCompatActivity() {
+class SlideActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_slide)
     }
 }

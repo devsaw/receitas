@@ -14,7 +14,13 @@
         android:theme="@style/Theme.Cookbook"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.dashboard.view.DashBoardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.intro.view.SlideActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.intro.view.SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
