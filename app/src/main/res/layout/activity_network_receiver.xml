@@ -38,6 +38,6 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4"
         app:layout_constraintVertical_bias="0.215"
         app:lottie_autoPlay="true"
-        app:lottie_rawRes="@raw/dugtrio" />
+        app:lottie_rawRes="@raw/chef" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
