@@ -81,6 +81,10 @@ class LoginFragment : Fragment(R.layout.fragment_login){
             val signIntent = googleSignInClient.signInIntent
             launcher.launch(signIntent)
         }
+
+        binding.btnFacebook.setOnClickListener{
+
+        }
     }
 
     private fun validLogin(email: String, password: String) {

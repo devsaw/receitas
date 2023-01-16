@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/drawable/ic_baseline_arrow_back_ios_24.xml" value="0.164" />
+        <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/drawable/shape_backbutton.xml" value="0.164" />
         <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/drawable/shape_bottom_nav.xml" value="0.164" />
         <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/font/bungee.xml" value="0.28020833333333334" />
         <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/font/lato.xml" value="0.28020833333333334" />
@@ -10,6 +12,7 @@
         <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/layout/activity_forgot_pass.xml" value="0.25" />
         <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/layout/activity_main.xml" value="0.2359375" />
         <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/layout/activity_network_receiver.xml" value="0.2" />
+        <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/layout/activity_pdf_viewer.xml" value="0.25" />
         <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/layout/activity_sign_in.xml" value="0.25" />
         <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/layout/activity_slide.xml" value="0.25" />
         <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/layout/activity_splash_screen.xml" value="0.24615384615384617" />
