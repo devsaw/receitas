@@ -22,7 +22,7 @@
         android:id="@+id/bottomNavigation"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="@drawable/shape_bottom_nav"
+        android:background="@drawable/foundimage"
         app:itemIconTint="@color/white"
         app:itemTextColor="@color/white"
         app:labelVisibilityMode="selected"

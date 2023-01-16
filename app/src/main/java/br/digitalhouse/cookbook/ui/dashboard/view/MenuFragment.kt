@@ -21,6 +21,24 @@ class MenuFragment : Fragment(R.layout.fragment_menu){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setOnClickListener()
+    }
 
+    private fun setOnClickListener() {
+        binding.btnOpenCam.setOnClickListener{
+
+        }
+
+        binding.alterarSenha.setOnClickListener{
+
+        }
+
+        binding.contribuaPix.setOnClickListener{
+
+        }
+
+        binding.sair.setOnClickListener{
+
+        }
     }
 }

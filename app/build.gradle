@@ -86,6 +86,9 @@ dependencies {
     //PDF Viewer
     implementation 'com.danjdt:pdfviewer:0.1.0'
 
+    //RoundedImageView
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+
     //AdMob
     //implementation 'com.google.android.gms:play-services-ads:21.4.0'
 }
