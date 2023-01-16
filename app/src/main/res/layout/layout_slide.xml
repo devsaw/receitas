@@ -28,7 +28,7 @@
         android:layout_marginBottom="70dp"
         android:fontFamily="@font/lato"
         android:textAlignment="center"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
