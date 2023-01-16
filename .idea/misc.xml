@@ -7,14 +7,18 @@
         <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/font/bungee.xml" value="0.28020833333333334" />
         <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/font/lato.xml" value="0.28020833333333334" />
         <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/layout/activity_dashboard.xml" value="0.2359375" />
+        <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/layout/activity_forgot_pass.xml" value="0.25" />
         <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/layout/activity_main.xml" value="0.2359375" />
         <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/layout/activity_network_receiver.xml" value="0.2" />
+        <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/layout/activity_sign_in.xml" value="0.25" />
         <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/layout/activity_slide.xml" value="0.25" />
         <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/layout/activity_splash_screen.xml" value="0.24615384615384617" />
         <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/layout/activity_splashscreen.xml" value="0.25" />
         <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/layout/fragment_favorite.xml" value="0.25" />
         <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/layout/fragment_home.xml" value="0.2359375" />
+        <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/layout/fragment_login.xml" value="0.2359375" />
         <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/layout/fragment_menu.xml" value="0.25" />
+        <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/layout/fragment_register.xml" value="0.2359375" />
         <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/layout/fragment_search.xml" value="0.25" />
         <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/menu/menu_dashboard.xml" value="0.25" />
       </map>

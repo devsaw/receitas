@@ -7,4 +7,14 @@
     android:background="@drawable/foundimage"
     tools:context=".ui.intro.view.SlideActivity">
 
+    <Button
+        android:id="@+id/go"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="GO"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
