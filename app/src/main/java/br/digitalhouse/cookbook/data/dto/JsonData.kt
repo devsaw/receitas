@@ -4,9 +4,7 @@ import android.os.Parcelable
 import br.digitalhouse.cookbook.data.utils.ConfigFirebase
 import kotlinx.parcelize.Parcelize
 
-data class Receitas(
-    val recipes : ArrayList<ReceitasItem>
-)
+class Receitas: ArrayList<ReceitasItem>()
 
 data class ReceitasItem(
     val _id: Id,

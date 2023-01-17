@@ -30,9 +30,10 @@
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/appCompatImageView"
-            android:layout_width="220dp"
+            android:layout_width="230dp"
             android:layout_height="55dp"
-            android:layout_marginStart="70dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="5dp"
             android:src="@drawable/logo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"

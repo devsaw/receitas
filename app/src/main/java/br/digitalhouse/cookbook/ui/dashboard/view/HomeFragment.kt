@@ -36,16 +36,8 @@ class HomeFragment : Fragment(R.layout.fragment_home){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setOnClickListener()
         initHomeBannerAdapter()
         initHomeListAdapter()
-    }
-
-    private fun setOnClickListener() {
-        binding.btnNotifications.setOnClickListener{
-
-        }
-
     }
 
     private fun initHomeBannerAdapter() {

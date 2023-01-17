@@ -68,11 +68,11 @@ class RecipeListAdapter(
 
     fun update(recipesObject: Receitas) {
         this.results.clear()
-        this.results.addAll(recipesObject.recipes)
+        this.results.addAll(recipesObject)
         this.notifyDataSetChanged()
     }
 
     inner class HomeHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val nome: TextView = itemView.findViewById(R.id.textViewRecipe)
+        val nome: TextView = itemView.findViewById(R.id.textRecipe)
     }
 }
