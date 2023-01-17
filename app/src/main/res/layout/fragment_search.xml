@@ -6,19 +6,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.dashboard.view.SearchFragment">
 
-    <com.makeramen.roundedimageview.RoundedImageView
+    <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/appCompatImageView3"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginStart="16dp"
         android:scaleType="centerCrop"
         android:src="@drawable/foundimage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:riv_corner_radius_bottom_left="30dp"
-        app:riv_corner_radius_top_left="30dp"
-        app:riv_mutate_background="true" />
+        app:riv_mutate_background="true"/>
 
     <LinearLayout
         android:id="@+id/linearLayout9"
