@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -15,16 +14,15 @@ import br.digitalhouse.alugueapp.mockkdata.BannerDataClass
 import br.digitalhouse.cookbook.R
 import br.digitalhouse.cookbook.databinding.FragmentHomeBinding
 import br.digitalhouse.cookbook.ui.dashboard.adapter.HomeBannerAdapter
-import br.digitalhouse.cookbook.ui.dashboard.adapter.RecipeListAdapter
+import br.digitalhouse.cookbook.ui.dashboard.adapter.HomeRecipeAdapter
 import br.digitalhouse.cookbook.ui.dashboard.viewmodel.RecipesViewModel
-import com.bumptech.glide.Glide
 import kotlinx.coroutines.launch
 
 class HomeFragment : Fragment(R.layout.fragment_home){
     private val binding: FragmentHomeBinding by lazy { FragmentHomeBinding.inflate(layoutInflater) }
     private val viewModel: RecipesViewModel by viewModels()
     private lateinit var bannerAdapter: HomeBannerAdapter
-    private lateinit var recipeListAdapter: RecipeListAdapter
+    private lateinit var homeRecipeAdapter: HomeRecipeAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -79,7 +77,7 @@ class HomeFragment : Fragment(R.layout.fragment_home){
     }
 
     private fun initHomeListAdapter(){
-        recipeListAdapter = RecipeListAdapter(requireContext(), onItemClicked = { name, num, image, height, weight, type, weaknesses, prevevo, nextevo ->
+        homeRecipeAdapter = HomeRecipeAdapter(requireContext(), onItemClicked = { name, num, image, height, weight, type, weaknesses, prevevo, nextevo ->
             val intent = Intent(requireContext(), DetailActivity::class.java)
             intent.putExtra("name", name)
             intent.putExtra("num", num)
@@ -92,11 +90,11 @@ class HomeFragment : Fragment(R.layout.fragment_home){
             intent.putExtra("nextevo", nextevo)
             startActivity(intent)
         })
-        requireView().findViewById<RecyclerView>(R.id.rvListRecipes).adapter = recipeListAdapter
+        requireView().findViewById<RecyclerView>(R.id.rvListRecipes).adapter = homeRecipeAdapter
 
         lifecycleScope.launch{
             val feed = viewModel.fetchRecipes()
-            recipeListAdapter.update(feed)
+            homeRecipeAdapter.update(feed)
         }
     }
 }
