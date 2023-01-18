@@ -41,16 +41,16 @@ class HomeFragment : Fragment(R.layout.fragment_home){
     private fun initHomeBannerAdapter() {
         bannerAdapter = HomeBannerAdapter(
             listOf(
-                BannerDataClass(image = R.drawable.googlelogo, text = "primeira"),
-                BannerDataClass(image = R.drawable.facebook, text = "segunda"),
-                BannerDataClass(image = R.drawable.donat, text = "terceira"),
-                BannerDataClass(image = R.drawable.booktest, text = "quarta"),
-                BannerDataClass(image = R.drawable.favoritos, text = "quinta"),
-                BannerDataClass(image = R.drawable.menu, text = "sexta"),
-                BannerDataClass(image = R.drawable.facebook, text = "setima"),
-                BannerDataClass(image = R.drawable.donat, text = "oitava"),
-                BannerDataClass(image = R.drawable.googlelogo, text = "nona"),
-                BannerDataClass(image = R.drawable.favoritos, text = "decima")
+                BannerDataClass(image = R.drawable.bolocenoura, text = "Bolo de cenoura"),
+                BannerDataClass(image = R.drawable.pudim, text = "Pudim de leite"),
+                BannerDataClass(image = R.drawable.tortacafe, text = "Torta de café"),
+                BannerDataClass(image = R.drawable.mussemaracuja, text = "Mousse de maracujá"),
+                BannerDataClass(image = R.drawable.cheesecake, text = "Cheesecake de morango"),
+                BannerDataClass(image = R.drawable.tortadefrango, text = "Torta de frango"),
+                BannerDataClass(image = R.drawable.salpicao, text = "Salpicão"),
+                BannerDataClass(image = R.drawable.strogonoff, text = "Strogonoff"),
+                BannerDataClass(image = R.drawable.lasanha, text = "Lasanha de carne"),
+                BannerDataClass(image = R.drawable.pizza, text = "Pizza de Calabresa")
             )
         )
         val bannerViewPager = binding.rvItemHomeBanner

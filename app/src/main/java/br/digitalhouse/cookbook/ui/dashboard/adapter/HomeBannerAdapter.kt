@@ -30,6 +30,7 @@ class HomeBannerAdapter(private val listData: List<BannerDataClass>):
 
     override fun onBindViewHolder(holder: DataHolder, position: Int) {
         holder.images.setImageResource(listData[position].image)
+        holder.text.setText(listData[position].text)
     }
 
     override fun getItemCount(): Int {
@@ -38,7 +39,7 @@ class HomeBannerAdapter(private val listData: List<BannerDataClass>):
 
     inner class DataHolder(itemView: View, listener: ItemClickListener) : RecyclerView.ViewHolder(itemView) {
         val images = itemView.findViewById<ImageView>(R.id.imageViewRecipe)
-        val text = itemView.findViewById<TextView>(R.id.textViewRecipe)
+        var text = itemView.findViewById<TextView>(R.id.textViewRecipe)
 
         init {
             itemView.setOnClickListener { listener.onItemClick(adapterPosition) }
