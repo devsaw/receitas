@@ -61,14 +61,11 @@ class MenuFragment : Fragment(R.layout.fragment_menu){
     }
 
     private fun functionExit() {
-        val dialog = BottomSheetDialog(requireContext(), R.style.BottonSheetDialog).apply {
-            window!!.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE)
-        }
-
-       //val sheetBinding: LayoutBottomSheetBinding = LayoutBottomSheetBinding.inflate(layoutInflater, null, false)
+        val dialog = BottomSheetDialog(requireContext(), R.style.BottonSheetDialog)
 
         sheetBinding.btnSair.setOnClickListener{
             FirebaseAuth.getInstance().signOut()
+            dialog.dismiss()
             Toast.makeText(requireContext(), "Você saiu!", Toast.LENGTH_LONG).show()
             startActivity(Intent(requireContext(), SignInActivity::class.java))
         }
@@ -82,8 +79,6 @@ class MenuFragment : Fragment(R.layout.fragment_menu){
             window!!.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE)
         }
 
-       //val sheetBindingAcc: LayoutBottomSheetAccBinding = LayoutBottomSheetAccBinding.inflate(layoutInflater, null, false)
-
         sheetBindingAcc.btnRemoveaAcc.setOnClickListener{
             if (sheetBindingAcc.passEditText.text.toString().isNullOrEmpty()){
                 Toast.makeText(requireContext(), "Digite a senha!", Toast.LENGTH_SHORT).show()
@@ -96,6 +91,7 @@ class MenuFragment : Fragment(R.layout.fragment_menu){
                     if (task.isSuccessful) {
                         user.delete()
                         Toast.makeText(requireContext(), "Sua conta foi excluída! Esperamos te ver novamente em breve!", Toast.LENGTH_LONG).show()
+                        dialog.dismiss()
                         ActivityCompat.finishAffinity(requireActivity())
                     } else {
                         Toast.makeText(requireContext(), "Senha incorreta!", Toast.LENGTH_SHORT).show()

@@ -33,7 +33,7 @@ class SlideActivity : AppCompatActivity() {
     private fun setOnBoardingItems() {
         introSlideAdapter = SlideAdapter(
             listOf(
-                SlideDataClass(image = R.drawable.facebook, description = "Bem vindo ao GastroCook's, seu hand book de receitas!"),
+                SlideDataClass(image = R.drawable.facebook, description = "Bem vindo ao Gastro Cook's, seu hand book de receitas!"),
                 SlideDataClass(image = R.drawable.googlelogo, description = "São mais de 8 mil receitas profissionais na palma da sua mão!"),
             )
         )

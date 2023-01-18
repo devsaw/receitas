@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/foundimage"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.signin.view.RegisterFragment">
 
     <ScrollView
@@ -29,27 +29,28 @@
                 style="@style/inputLayoutStyle"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:fontFamily="@font/lato"
-                android:layout_marginTop="20dp"
                 android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="20dp"
                 android:ems="10"
+                android:fontFamily="@font/lato"
                 android:hint="Nome"
                 android:inputType="textPersonName"
                 android:textColorHint="@color/white"
                 app:endIconMode="clear_text"
+                app:endIconTint="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/editTextNameRegister"
-                    android:maxLength="45"
                     android:layout_width="match_parent"
-                    android:fontFamily="@font/lato"
-                    android:textColor="@color/white"
-                    android:keyboardNavigationCluster="false"
                     android:layout_height="54dp"
+                    android:fontFamily="@font/lato"
+                    android:keyboardNavigationCluster="false"
+                    android:maxLength="45"
+                    android:textColor="@color/white"
                     tools:ignore="MissingConstraints" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -58,8 +59,8 @@
                 style="@style/inputLayoutStyle"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_marginTop="20dp"
                 android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="20dp"
                 android:ems="10"
                 android:fontFamily="@font/lato"
@@ -67,6 +68,7 @@
                 android:inputType="textPersonName"
                 android:textColorHint="@color/white"
                 app:endIconMode="clear_text"
+                app:endIconTint="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -74,11 +76,11 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/editTextUserRegister"
                     android:layout_width="match_parent"
-                    android:maxLength="45"
-                    android:fontFamily="@font/lato"
-                    android:textColor="@color/white"
-                    android:keyboardNavigationCluster="false"
                     android:layout_height="54dp"
+                    android:fontFamily="@font/lato"
+                    android:keyboardNavigationCluster="false"
+                    android:maxLength="45"
+                    android:textColor="@color/white"
                     tools:ignore="MissingConstraints" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -87,13 +89,14 @@
                 style="@style/inputLayoutStyle"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_marginTop="20dp"
-                android:fontFamily="@font/lato"
                 android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="20dp"
+                android:fontFamily="@font/lato"
                 android:hint="Senha"
                 android:textColorHint="@color/white"
                 app:endIconMode="password_toggle"
+                app:endIconTint="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
@@ -102,10 +105,10 @@
                     android:id="@+id/editTextPassRegister"
                     android:layout_width="match_parent"
                     android:layout_height="54dp"
-                    android:textColor="@color/white"
                     android:fontFamily="@font/lato"
+                    android:inputType="textPassword"
                     android:maxLength="25"
-                    android:inputType="textPassword" />
+                    android:textColor="@color/white" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -113,13 +116,14 @@
                 style="@style/inputLayoutStyle"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_marginTop="20dp"
                 android:layout_marginStart="20dp"
-                android:fontFamily="@font/lato"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="20dp"
+                android:fontFamily="@font/lato"
                 android:hint="Confirme a Senha"
                 android:textColorHint="@color/white"
                 app:endIconMode="password_toggle"
+                app:endIconTint="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
@@ -129,9 +133,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="54dp"
                     android:fontFamily="@font/lato"
-                    android:textColor="@color/white"
+                    android:inputType="textPassword"
                     android:maxLength="25"
-                    android:inputType="textPassword" />
+                    android:textColor="@color/white" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <LinearLayout
@@ -146,12 +150,12 @@
                     android:id="@+id/textTerms"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
                     android:layout_marginStart="5dp"
-                    android:textSize="15sp"
-                    android:fontFamily="@font/lato"
                     android:layout_marginTop="8dp"
+                    android:fontFamily="@font/lato"
                     android:text="Aceite os termos"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textInputLayout8" />
 
@@ -169,18 +173,18 @@
                 android:id="@+id/btRegister"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_marginTop="78dp"
+                android:layout_gravity="center"
                 android:layout_marginStart="20dp"
+                android:layout_marginTop="78dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginBottom="100dp"
-                android:layout_gravity="center"
-                android:text="Registrar"
-                android:fontFamily="@font/lato"
-                android:textSize="20dp"
-                android:textColor="@color/black"
                 android:backgroundTint="@color/white"
-                app:cornerRadius="20dp"
-                android:textAlignment="center" />
+                android:fontFamily="@font/lato"
+                android:text="Registrar"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                app:cornerRadius="20dp" />
         </LinearLayout>
     </ScrollView>
 
@@ -193,8 +197,8 @@
         app:layout_constraintHorizontal_bias="0.500"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.300"
         app:lottie_autoPlay="true"
-        app:lottie_rawRes="@raw/chef"
-        app:layout_constraintVertical_bias="0.300" />
+        app:lottie_rawRes="@raw/chef" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
