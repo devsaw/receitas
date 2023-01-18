@@ -14,6 +14,7 @@
         <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/drawable/indicator_active_background.xml" value="0.164" />
         <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/drawable/indicator_inactive_background.xml" value="0.164" />
         <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/drawable/shape_backbutton.xml" value="0.164" />
+        <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/drawable/shape_background_bottom_sheet.xml" value="0.17" />
         <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/drawable/shape_background_icn_menu.xml" value="0.164" />
         <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/drawable/shape_background_menu_settings.xml" value="0.164" />
         <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/drawable/shape_background_recommended.xml" value="0.164" />
@@ -44,6 +45,7 @@
         <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/layout/fragment_register.xml" value="0.2359375" />
         <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/layout/fragment_search.xml" value="0.25" />
         <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/layout/highlights_layout.xml" value="0.25" />
+        <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/layout/layout_bottom_sheet.xml" value="0.1875" />
         <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/layout/layout_cardrecipes.xml" value="0.25" />
         <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/layout/layout_highlights.xml" value="0.264" />
         <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/layout/layout_slide.xml" value="0.25" />

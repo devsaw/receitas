@@ -94,7 +94,6 @@ class LoginFragment : Fragment(R.layout.fragment_login){
             if (task.isSuccessful) {
                 binding.progressBar.visibility = View.GONE
                 if (auth!!.currentUser!!.isEmailVerified){
-                    Toast.makeText(requireContext(), "Logado!", Toast.LENGTH_SHORT).show()
                     startActivity(Intent(requireContext(), DashBoardActivity::class.java))
                 } else{
                     Toast.makeText(requireContext(), "Verifique seu e-mail!", Toast.LENGTH_SHORT).show()
