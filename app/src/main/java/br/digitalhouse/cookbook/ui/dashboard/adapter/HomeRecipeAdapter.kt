@@ -17,37 +17,12 @@ class HomeRecipeAdapter(
 ) :
     RecyclerView.Adapter<HomeRecipeAdapter.HomeHolder>() {
 
-    private var pEvo = ""
-    private var nEvo = ""
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = HomeHolder(
         LayoutInflater.from(parent.context).inflate(R.layout.layout_cardrecipes, parent, false)
     )
 
     override fun onBindViewHolder(holder: HomeHolder, position: Int) {
         holder.itemView.rootView.setOnClickListener {
-//            if (results[position].prevEvolution != null){
-//                for (iEvo in results[position].prevEvolution!!){
-//                    if (iEvo.namePrevEvolution == results[position].nomePokemon){
-//                        pEvo = ""
-//                    } else{
-//                        pEvo = iEvo.namePrevEvolution
-//                    }
-//                }
-//            }else{
-//                pEvo = ""
-//            }
-//
-//            if (results[position].nextEvolution != null){
-//                if (results[position].nextEvolution!![0].nameNextEvolution == results[position].nomePokemon){
-//                        nEvo = ""
-//                    }else{
-//                        nEvo = results[position].nextEvolution!![0].nameNextEvolution
-//                    }
-//            }else{
-//                nEvo = ""
-//            }
-
 //            onItemClicked.invoke(
 //                results[position].nomePokemon,
 //                results[position].num,
