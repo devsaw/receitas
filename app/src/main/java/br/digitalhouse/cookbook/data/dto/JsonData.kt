@@ -22,7 +22,7 @@ data class Secao(
 )
 
 @Parcelize
-data class PokemonsDataClass(
+data class RecipesFireBaseDataClass(
     var imageP: String? = null,
     var elementP: String? = null,
     var nameP: String? = null,

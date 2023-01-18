@@ -41,18 +41,13 @@
             app:layout_constraintTop_toTopOf="parent" />
     </LinearLayout>
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="16dp"
-        android:fontFamily="@font/lato"
-        android:text="Mais buscadas"
-        android:textColor="@color/brownapp"
-        android:textSize="22sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/maisbuscadas"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appCompatImageView3" />
 
@@ -113,18 +108,13 @@
         app:shapeAppearanceOverlay="@null"
         app:tint="@color/black" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/textViewHight"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="16dp"
-        android:fontFamily="@font/lato"
-        android:text="Lista de receitas"
-        android:textColor="@color/brownapp"
-        android:textSize="22sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/recipelist"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rvItemHomeBanner" />
 
