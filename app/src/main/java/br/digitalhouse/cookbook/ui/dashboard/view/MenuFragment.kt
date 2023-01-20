@@ -127,31 +127,35 @@ class MenuFragment : Fragment(R.layout.fragment_menu) {
     }
 
     private fun funExit() {
-        val dialog = BottomSheetDialog(requireContext(), R.style.BottonSheetDialog)
+        val dialog = BottomSheetDialog(requireContext(), R.style.BottonSheetDialog).apply {
+            window!!.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE) }
+        dialog.setContentView(R.layout.layout_bottom_sheet)
+        val btnSair = dialog.findViewById<Button>(R.id.btnSair)
 
-        sheetBinding.btnSair.setOnClickListener {
+        btnSair!!.setOnClickListener {
             FirebaseAuth.getInstance().signOut()
             dialog.dismiss()
             Toast.makeText(requireContext(), "Você saiu!", Toast.LENGTH_LONG).show()
             startActivity(Intent(requireContext(), SignInActivity::class.java))
         }
-
-        dialog.setContentView(sheetBinding.root)
         dialog.show()
     }
 
     private fun funRemoveAcc() {
         val dialog = BottomSheetDialog(requireContext(), R.style.BottonSheetDialog).apply {
-            window!!.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE)
-        }
+            window!!.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE) }
+        dialog.setContentView(R.layout.layout_bottom_sheet_acc)
 
-        sheetBindingAcc.btnRemoveaAcc.setOnClickListener {
-            if (sheetBindingAcc.passEditText.text.toString().isNullOrEmpty()) {
+        val btnRemoveaAcc = dialog.findViewById<Button>(R.id.btnRemoveaAcc)
+        val passEditText = dialog.findViewById<EditText>(R.id.passEditText)
+
+       btnRemoveaAcc!!.setOnClickListener {
+            if (passEditText!!.text.toString().isNullOrEmpty()) {
                 Toast.makeText(requireContext(), "Digite a senha!", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
             val user = auth!!.currentUser
-            val credential = EmailAuthProvider.getCredential(user!!.email!!, sheetBindingAcc.passEditText.text.toString())
+            val credential = EmailAuthProvider.getCredential(user!!.email!!, passEditText.text.toString())
             if (user != null && user.email != null) {
                 user.reauthenticate(credential).addOnCompleteListener { task ->
                     if (task.isSuccessful) {
@@ -172,20 +176,6 @@ class MenuFragment : Fragment(R.layout.fragment_menu) {
                 Toast.makeText(requireContext(), "Não é possível no momento!", Toast.LENGTH_SHORT)
                     .show()
             }
-        }
-
-        dialog.setContentView(sheetBindingAcc.root)
-        dialog.show()
-    }
-
-    fun showDialogOne() {
-
-        val dialog = BottomSheetDialog(requireContext())
-        dialog.setContentView(R.layout.layout_bottom_sheet_acc)
-        val btnEdit= dialog.findViewById<Button>(R.id.btnRemoveaAcc)
-
-        btnEdit?.setOnClickListener {
-            Toast.makeText(requireContext(), "Clicked on Edit", Toast.LENGTH_SHORT).show()
         }
         dialog.show()
     }
