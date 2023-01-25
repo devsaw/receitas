@@ -103,7 +103,6 @@
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="15dp"
                 android:layout_marginTop="25dp"
-                android:background="@drawable/shape_button_cancel"
                 android:fontFamily="@font/lato"
                 android:gravity="center"
                 android:text="Cancelar"

@@ -1,8 +1,13 @@
 package br.digitalhouse.cookbook.ui.dashboard.view
 
 import android.Manifest
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.database.Cursor
+import android.graphics.Bitmap
+import android.graphics.ImageDecoder
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
@@ -34,6 +39,9 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
+import java.io.ByteArrayOutputStream
+import java.io.File
 
 class MenuFragment : Fragment(R.layout.fragment_menu) {
     private val binding: FragmentMenuBinding by lazy { FragmentMenuBinding.inflate(layoutInflater) }
@@ -45,8 +53,11 @@ class MenuFragment : Fragment(R.layout.fragment_menu) {
     private val IMAGE_STORAGE_CODE = 2
     private lateinit var firebaseStorage: FirebaseStorage
     private val firebaseRef = ConfigFirebase().getFirebase()
+    private lateinit var storageReference: StorageReference
     private var valueEventListener: ValueEventListener? = null
     private lateinit var alertDialog: AlertDialog
+    private var resultBitMap: Bitmap? = null
+    private var photoUri: Uri? = null
     private val permissions = arrayOf(
         Manifest.permission.CAMERA,
         Manifest.permission.READ_EXTERNAL_STORAGE,
@@ -69,6 +80,12 @@ class MenuFragment : Fragment(R.layout.fragment_menu) {
         setData()
         binding.progressBar.visibility = View.GONE
         setOnClickListener()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        binding.progressBar.visibility = View.GONE
+        setImageClient()
     }
 
     private fun setOnClickListener() {
@@ -124,6 +141,141 @@ class MenuFragment : Fragment(R.layout.fragment_menu) {
         }
     }
 
+    private fun openCam() {
+        if (ContextCompat.checkSelfPermission(requireContext(), android.Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED
+        ) {
+            ActivityCompat.requestPermissions(requireActivity(), arrayOf(android.Manifest.permission.CAMERA), IMAGE_CAPTURE_CODE)
+        } else {
+            val intentCapture = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+            startActivityForResult(intentCapture, IMAGE_CAPTURE_CODE)
+        }
+    }
+
+    private fun openGal() {
+        if (ContextCompat.checkSelfPermission(
+                requireContext(),
+                android.Manifest.permission.READ_EXTERNAL_STORAGE
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
+            ActivityCompat.requestPermissions(
+                requireActivity(),
+                arrayOf(android.Manifest.permission.READ_EXTERNAL_STORAGE), IMAGE_STORAGE_CODE
+            )
+        } else {
+            val intentStorage = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+            startActivityForResult(intentStorage, IMAGE_STORAGE_CODE)
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        try {
+            if (requestCode == IMAGE_CAPTURE_CODE && data != null) {
+                val foto = data.getParcelableExtra<Bitmap>("data")
+                // binding.imageViewClient.setImageBitmap(foto)
+                val extras = data.extras
+                val img = extras!!.get("data") as Bitmap
+                //binding.imageViewClient.setImageBitmap(img)
+                val tempUri = getImageUri(requireContext(), img)
+                val finalFile = File(getRealPathFromURI(tempUri))
+                resultBitMap = img
+                photoUri = tempUri!!
+
+                //função adicionar foto no firebase
+                storageReference = FirebaseStorage.getInstance().getReference("usuarios/"+auth!!.currentUser!!.uid)
+                storageReference.putFile(photoUri!!).addOnSuccessListener {
+                    Toast.makeText(requireContext(), "Imagem alterada!", Toast.LENGTH_SHORT).show()
+                }.addOnFailureListener{
+                    Toast.makeText(requireContext(), "Não foi possível alterar a imagem.", Toast.LENGTH_SHORT).show()
+                }
+                binding.progressBar.visibility = View.GONE
+            } else if (requestCode == IMAGE_STORAGE_CODE && data != null) {
+                val selectedPhotoUri = data.data
+                val imgPath = getRealPathFromURI(selectedPhotoUri)
+                val finalFileS = File(imgPath.toString())
+                try {
+                    selectedPhotoUri?.let {
+                        if(Build.VERSION.SDK_INT < 28) {
+                            val bitmap = MediaStore.Images.Media.getBitmap(requireContext().contentResolver, selectedPhotoUri)
+                            //binding.imageViewClient.setImageBitmap(bitmap)
+                            resultBitMap = bitmap
+                            photoUri = selectedPhotoUri
+                        } else {
+                            val source = ImageDecoder.createSource(requireContext().contentResolver, selectedPhotoUri)
+                            val bitmapT = ImageDecoder.decodeBitmap(source)
+                            //binding.imageViewClient.setImageBitmap(bitmapT)
+                            resultBitMap = bitmapT
+                            photoUri = selectedPhotoUri
+                        }
+                    }
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                }
+
+                //função adicionar foto no firebase
+                storageReference = FirebaseStorage.getInstance().getReference("usuarios/"+auth!!.currentUser!!.uid)
+                storageReference.putFile(photoUri!!).addOnSuccessListener {
+                    Toast.makeText(requireContext(), "Imagem alterada!", Toast.LENGTH_SHORT).show()
+                }.addOnFailureListener{
+                    Toast.makeText(requireContext(), "Não foi possível alterar a imagem.", Toast.LENGTH_SHORT).show()
+                }
+                binding.progressBar.visibility = View.GONE
+            }
+        } catch (e: Exception){
+            e.printStackTrace()
+        }
+    }
+
+    private fun getImageUri(inContext: Context, inImage: Bitmap): Uri? {
+        val bytes = ByteArrayOutputStream()
+        inImage.compress(Bitmap.CompressFormat.JPEG, 100, bytes)
+        val path = MediaStore.Images.Media.insertImage(
+            inContext.contentResolver,
+            inImage, "image", null
+        )
+        return Uri.parse(path)
+    }
+
+    private fun getRealPathFromURI(uri: Uri?): String? {
+        var path = ""
+        if (requireContext().contentResolver != null) {
+            val cursor: Cursor? = requireContext().contentResolver.query(
+                uri!!,
+                null, null, null, null
+            )
+            if (cursor != null) {
+                cursor.moveToFirst()
+                val idx: Int = cursor.getColumnIndex(MediaStore.Images.ImageColumns.DATA)
+                path = cursor.getString(idx)
+                cursor.close()
+            }
+        }
+        return path
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == IMAGE_CAPTURE_CODE) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+                startActivityForResult(intent, IMAGE_CAPTURE_CODE)
+            }
+        }
+
+        if (requestCode == IMAGE_STORAGE_CODE) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                val intentG =
+                    Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+                startActivityForResult(intentG, IMAGE_STORAGE_CODE)
+            }
+        }
+    }
+
     private fun setImageClient() {
         try {
             firebaseStorage.reference.child("usuarios/").child(auth!!.currentUser!!.uid)
@@ -150,12 +302,6 @@ class MenuFragment : Fragment(R.layout.fragment_menu) {
             }
             override fun onCancelled(error: DatabaseError) {}
         })
-    }
-
-    override fun onResume() {
-        super.onResume()
-        binding.progressBar.visibility = View.GONE
-        setImageClient()
     }
 
     private fun funChangePass(){
