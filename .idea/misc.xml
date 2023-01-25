@@ -10,9 +10,11 @@
         <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.17" />
         <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/drawable/ic_desativaracc.xml" value="0.164" />
         <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/drawable/ic_donate.xml" value="0.164" />
+        <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/drawable/ic_photo_camera.xml" value="0.17" />
         <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/drawable/ic_sair.xml" value="0.164" />
         <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/drawable/indicator_active_background.xml" value="0.164" />
         <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/drawable/indicator_inactive_background.xml" value="0.164" />
+        <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/drawable/shape_alert_dialog.xml" value="0.17" />
         <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/drawable/shape_backbutton.xml" value="0.164" />
         <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/drawable/shape_background_bottom_sheet.xml" value="0.17" />
         <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/drawable/shape_background_icn_menu.xml" value="0.164" />
@@ -37,6 +39,7 @@
         <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/layout/activity_slide.xml" value="0.25" />
         <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/layout/activity_splash_screen.xml" value="0.24615384615384617" />
         <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/layout/activity_splashscreen.xml" value="0.25" />
+        <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/layout/alert_dialog_gallery_cam.xml" value="0.25" />
         <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/layout/cardrecipes_layout.xml" value="0.25" />
         <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/layout/fragment_favorite.xml" value="0.25" />
         <entry key="..\:/Users/saulo/Desktop/Cookbook/app/src/main/res/layout/fragment_home.xml" value="0.25" />
