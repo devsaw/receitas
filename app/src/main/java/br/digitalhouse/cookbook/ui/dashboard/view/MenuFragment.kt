@@ -2,7 +2,6 @@ package br.digitalhouse.cookbook.ui.dashboard.view
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -46,7 +45,7 @@ class MenuFragment : Fragment(R.layout.fragment_menu) {
 
     private fun setOnClickListener() {
         binding.btnOpenCam.setOnClickListener {
-
+            funOpenOptions()
         }
 
         binding.alterarSenha.setOnClickListener {
@@ -64,6 +63,10 @@ class MenuFragment : Fragment(R.layout.fragment_menu) {
         binding.sair.setOnClickListener {
             funExit()
         }
+    }
+
+    private fun funOpenOptions() {
+
     }
 
     private fun funChangePass(){
