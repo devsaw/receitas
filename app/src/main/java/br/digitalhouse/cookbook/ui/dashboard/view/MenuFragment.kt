@@ -94,7 +94,7 @@ class MenuFragment : Fragment(R.layout.fragment_menu) {
         }
 
         binding.alterarSenha.setOnClickListener {
-           funChangePass()
+            funChangePass()
         }
 
         binding.contribuaPix.setOnClickListener {
@@ -104,7 +104,6 @@ class MenuFragment : Fragment(R.layout.fragment_menu) {
         binding.desativarConta.setOnClickListener {
             funRemoveAcc()
         }
-
         binding.sair.setOnClickListener {
             funExit()
         }
