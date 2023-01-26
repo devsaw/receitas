@@ -100,7 +100,6 @@ class MenuFragment : Fragment(R.layout.fragment_menu) {
         binding.contribuaPix.setOnClickListener {
 
         }
-
         binding.desativarConta.setOnClickListener {
             funRemoveAcc()
         }
